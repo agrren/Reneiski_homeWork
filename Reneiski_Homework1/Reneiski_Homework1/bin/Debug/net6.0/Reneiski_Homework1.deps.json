@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Reneiski_Homework1/1.0.0": {
+        "runtime": {
+          "Reneiski_Homework1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Reneiski_Homework1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

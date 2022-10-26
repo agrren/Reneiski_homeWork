@@ -1,8 +1,0 @@
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\bin\Debug\Reneiski.exe.config
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\bin\Debug\Reneiski.exe
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\bin\Debug\Reneiski.pdb
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\obj\Debug\Reneiski.csproj.AssemblyReference.cache
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\obj\Debug\Reneiski.csproj.SuggestedBindingRedirects.cache
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\obj\Debug\Reneiski.csproj.CoreCompileInputs.cache
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\obj\Debug\Reneiski.exe
-C:\Users\aliaksandr.reneiski\source\repos\Reneiski\Reneiski\obj\Debug\Reneiski.pdb

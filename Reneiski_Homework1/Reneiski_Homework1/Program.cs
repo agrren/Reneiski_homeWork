@@ -1,6 +1,4 @@
-﻿using Reneiski_Homework1.Lecture3;
-
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {

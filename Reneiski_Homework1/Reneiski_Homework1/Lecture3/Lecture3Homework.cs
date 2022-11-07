@@ -12,9 +12,9 @@
 
         public static void Task2()
         {
-            bool stopper = true;
+            bool isCorrect = true;
 
-            while (stopper == true)
+            while (isCorrect)
             {
                 Console.Clear();
                 ushort number;
@@ -23,7 +23,7 @@
                 {
                     Console.WriteLine("Please, give me a 4-number!");
                     number = ushort.Parse(Console.ReadLine());
-                    stopper = false;
+                    isCorrect = false;
                 }
                 catch (Exception)
                 {
@@ -45,9 +45,9 @@
 
         public static void Task3()
         {
-            bool stopper = true;
+            bool isCorrect = true;
 
-            while (stopper == true)
+            while (isCorrect)
             {
                 Console.Clear();
                 double number;
@@ -56,7 +56,7 @@
                 {
                     Console.WriteLine("Please, give me a number!");
                     number = double.Parse(Console.ReadLine());
-                    stopper = false;
+                    isCorrect = false;
                 }
                 catch (Exception)
                 {
@@ -121,9 +121,9 @@
 
         public static void Task7()
         {
-            bool stopper = true;
+            bool isCorrect = true;
 
-            while (stopper == true)
+            while (isCorrect)
             {
                 Console.Clear();
                 double number;
@@ -132,7 +132,7 @@
                 {
                     Console.WriteLine("Please, give me a number!");
                     number = double.Parse(Console.ReadLine());
-                    stopper = false;
+                    isCorrect = false;
                 }
                 catch (Exception)
                 {
@@ -151,9 +151,9 @@
 
         public static void Task8()
         {
-            bool stopper = true;
+            bool isCorrect = true;
 
-            while (stopper == true)
+            while (isCorrect)
             {
                 Console.Clear();
                 double a;
@@ -162,7 +162,7 @@
                 {
                     Console.WriteLine("Please, give me a number!");
                     a = double.Parse(Console.ReadLine());
-                    stopper = false;
+                    isCorrect = false;
                 }
                 catch (Exception)
                 {
@@ -181,9 +181,9 @@
 
         public static void Task9()
         {
-            bool stopper = true;
+            bool isCorrect = true;
 
-            while (stopper == true)
+            while (isCorrect)
             {
                 Console.Clear();
                 double a, b;
@@ -196,7 +196,7 @@
                     Console.WriteLine("Please, give me B number!");
                     b = double.Parse(Console.ReadLine());
 
-                    stopper = false;
+                    isCorrect = false;
                 }
                 catch (Exception)
                 {

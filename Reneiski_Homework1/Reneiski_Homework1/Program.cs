@@ -8,17 +8,18 @@ namespace Reneiski_Homework1
         static void Main(string[] args)
         {
             Zavod Belaz = new Zavod(new Worker(), "Belaz", "The best of the best!");
-            Belaz.Engineer = new Worker();
-            
-            Belaz.Engineer.NewEmployee();
-            Belaz.Engineer.GetWorker();
-            Belaz.Engineer.workOfMechanic();
+            Worker sasha = new Worker("Alex", "Ren", 41, "QA");
+            Worker ivan = new Worker("Ivan", "Ivanov", 54, "Director");
+            Worker semen = new Worker("Semen", "Semenov", 51, "Mechanic");
 
-            Zavod MAZ = new Zavod(new Worker(), 120, "Remontniy Ceh");
-            MAZ.Building = new Worker();
+            Belaz.SetWorker(sasha);
+            Belaz.SetWorker(ivan);
+            Belaz.SetWorker(semen);
 
-            MAZ.Building.NumberOfWorkers();
-            MAZ.Building.WorkerByPosition();
+            Belaz.ShowAllEmployeeInfo();
+            Belaz.ShowEmployeeNameInfo();
+            Belaz.ShowEmployeeAgeInfo();
+            Belaz.ShowEmployeePositionInfo();
         }
     }
 }

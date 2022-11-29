@@ -8,7 +8,7 @@ namespace WorkerNamespace
         private string firstName;
         public string lastName;
         private int age;
-        private string position;
+        public string position;
 
         public Worker(string firstName, string lastName, int age, string position)
         {
@@ -45,7 +45,10 @@ namespace WorkerNamespace
             Console.WriteLine($"Age: {age}");
             Console.WriteLine($"Position: {position}");
         }
-
-
+        
+        public void ShowWorkerWork()
+        {
+            Console.WriteLine($"{position} works on {position}'s place!");
+        }
     }
 }

@@ -96,5 +96,50 @@ namespace Reneiski_Homework1.Lecture5
                 }
             }
         }
+
+        public void ShowEmployeeNumber()
+        {
+            int numberOfEmployees = 0;
+
+            for (int i = 0; i < workers.Length; i++)
+            {
+                if (workers[i] == null)
+                {
+                    break;
+                }
+                
+                numberOfEmployees = i+1;                
+            }
+            Console.WriteLine($"Number of employee: {numberOfEmployees}");
+        }
+
+        public void ShowEmployeeByPosition()
+        {
+            Console.WriteLine("Type Position");
+            string ln = Console.ReadLine();
+
+            for (int i = 0; i < workers.Length; i++)
+            {
+                if (ln == workers[i]?.position)
+                {
+                    workers[i]?.ShowWorkerInfo();
+                }                
+            }
+        }
+
+        public void ShowEmployeeWork()
+        {
+            Console.WriteLine("Type Last Name");
+            string ln = Console.ReadLine();
+
+            for (int i = 0; i < workers.Length; i++)
+            {
+                if (ln == workers[i].lastName)
+                {
+                    workers[i].ShowWorkerWork();
+                    break;
+                }
+            }
+        }
     }
 }

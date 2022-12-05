@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-
-namespace WorkerNamespace
+﻿namespace WorkerNamespace
 {
     public class Worker
     {
         private string firstName;
-        public string lastName;
+        private string lastName;
         private int age;
-        public string position;
+        private string position;
 
         public Worker(string firstName, string lastName, int age, string position)
         {
@@ -20,6 +17,16 @@ namespace WorkerNamespace
 
         public Worker()
         {
+        }
+
+        public ref string LastNameInfo()
+        {
+            return ref lastName;
+        }
+
+        public ref string PositionInfo()
+        {
+            return ref position;
         }
 
         public void ShowWorkerName()
@@ -40,10 +47,9 @@ namespace WorkerNamespace
         public void ShowWorkerInfo()
         {
             Console.WriteLine("====Employee====");
-            Console.WriteLine($"First Name: {firstName}");
-            Console.WriteLine($"Last Name: {lastName}");
-            Console.WriteLine($"Age: {age}");
-            Console.WriteLine($"Position: {position}");
+            ShowWorkerName();
+            ShowWorkerAge();
+            ShowWorkerPosition();
         }
         
         public void ShowWorkerWork()

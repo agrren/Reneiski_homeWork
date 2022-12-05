@@ -1,5 +1,4 @@
 ﻿using WorkerNamespace;
-using Reneiski_Homework1;
 
 namespace Reneiski_Homework1.Lecture5
 {
@@ -37,8 +36,7 @@ namespace Reneiski_Homework1.Lecture5
                     workers[i] = workerToAdd;
                     break;
                 }
-            }
-            
+            }            
         }
 
         public void ShowAllEmployeeInfo()
@@ -55,11 +53,11 @@ namespace Reneiski_Homework1.Lecture5
         public void ShowEmployeeNameInfo()
         {
             Console.WriteLine("Type Last Name");
-            string ln = Console.ReadLine();
+            string lastname = Console.ReadLine();
             
             for (int i = 0; i < workers.Length; i++)
             {                    
-                if (ln == workers[i].lastName)
+                if (lastname == workers[i].LastNameInfo())
                 {
                     workers[i].ShowWorkerName();
                     break;
@@ -70,11 +68,11 @@ namespace Reneiski_Homework1.Lecture5
         public void ShowEmployeeAgeInfo()
         {
             Console.WriteLine("Type Last Name");
-            string ln = Console.ReadLine();
+            string lastname = Console.ReadLine();
 
             for (int i = 0; i < workers.Length; i++)
             {
-                if (ln == workers[i].lastName)
+                if (lastname == workers[i].LastNameInfo())
                 {
                     workers[i].ShowWorkerAge();
                     break;
@@ -85,11 +83,11 @@ namespace Reneiski_Homework1.Lecture5
         public void ShowEmployeePositionInfo()
         {
             Console.WriteLine("Type Last Name");
-            string ln = Console.ReadLine();
+            string lastname = Console.ReadLine();
 
             for (int i = 0; i < workers.Length; i++)
             {
-                if (ln == workers[i].lastName)
+                if (lastname == workers[i].LastNameInfo())
                 {
                     workers[i].ShowWorkerPosition();
                     break;
@@ -116,11 +114,11 @@ namespace Reneiski_Homework1.Lecture5
         public void ShowEmployeeByPosition()
         {
             Console.WriteLine("Type Position");
-            string ln = Console.ReadLine();
+            string lastname = Console.ReadLine();
 
             for (int i = 0; i < workers.Length; i++)
             {
-                if (ln == workers[i]?.position)
+                if (lastname == workers[i]?.PositionInfo())
                 {
                     workers[i]?.ShowWorkerInfo();
                 }                
@@ -130,11 +128,11 @@ namespace Reneiski_Homework1.Lecture5
         public void ShowEmployeeWork()
         {
             Console.WriteLine("Type Last Name");
-            string ln = Console.ReadLine();
-
+            string lastname = Console.ReadLine();
+            
             for (int i = 0; i < workers.Length; i++)
             {
-                if (ln == workers[i].lastName)
+                if (lastname == workers[i].LastNameInfo())
                 {
                     workers[i].ShowWorkerWork();
                     break;

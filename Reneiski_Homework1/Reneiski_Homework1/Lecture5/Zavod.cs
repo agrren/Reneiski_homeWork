@@ -7,8 +7,8 @@ namespace Reneiski_Homework1.Lecture5
         private Worker[] workers = new Worker[4];
         private Worker? Engineer;
         
-        public string Name;
-        public string Description;
+        private string Name;
+        private string Description;
 
         public Zavod(Worker? engineer, string name, string description)
         {
@@ -20,11 +20,6 @@ namespace Reneiski_Homework1.Lecture5
         public void SetEngineer(Worker worker)
         {
             Engineer = worker;
-        }
-
-        public void GetWorkerInfo()
-        {
-            Console.WriteLine();
         }
 
         public void SetWorker(Worker workerToAdd)
@@ -108,6 +103,7 @@ namespace Reneiski_Homework1.Lecture5
                 
                 numberOfEmployees = i+1;                
             }
+
             Console.WriteLine($"Number of employee: {numberOfEmployees}");
         }
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WorkerNamespace
+﻿namespace WorkerNamespace
 {
     public class Person
     {
@@ -19,6 +13,10 @@ namespace WorkerNamespace
             this.age = age;
         }
 
+        public Person()
+        {
+        }
+
         public virtual void ShowPersonInfo()
         {
             Console.WriteLine(firstName);
@@ -26,19 +24,10 @@ namespace WorkerNamespace
             Console.WriteLine(age);
         }
 
-        public virtual ref string ShowPersonLastName()
-        {
-            return ref lastName;
-        }
+        public virtual string GetPersonLastName() => lastName;
 
-        public virtual ref string ShowPersonFirstName()
-        {
-            return ref firstName;
-        }
-
-        public virtual ref int ShowPersonAge()
-        {
-            return ref age;
-        }
+        public virtual string GetPersonFirstName() => firstName;
+        
+        public virtual int GetPersonAge() => age;        
     }
 }

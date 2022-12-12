@@ -52,7 +52,7 @@ namespace Reneiski_Homework1.Lecture5
             
             for (int i = 0; i < workers.Length; i++)
             {                    
-                if (lastname == workers[i].ShowPersonLastName())
+                if (lastname == workers[i].GetPersonLastName())
                 {
                     workers[i].ShowWorkerName();
                     break;
@@ -67,7 +67,7 @@ namespace Reneiski_Homework1.Lecture5
 
             for (int i = 0; i < workers.Length; i++)
             {
-                if (lastname == workers[i].ShowPersonLastName())
+                if (lastname == workers[i].GetPersonLastName())
                 {
                     workers[i].ShowWorkerAge();
                     break;
@@ -82,7 +82,7 @@ namespace Reneiski_Homework1.Lecture5
 
             for (int i = 0; i < workers.Length; i++)
             {
-                if (lastname == workers[i].ShowPersonLastName())
+                if (lastname == workers[i].GetPersonLastName())
                 {
                     workers[i].ShowWorkerPosition();
                     break;
@@ -128,7 +128,7 @@ namespace Reneiski_Homework1.Lecture5
             
             for (int i = 0; i < workers.Length; i++)
             {
-                if (lastname == workers[i].ShowPersonLastName())
+                if (lastname == workers[i].GetPersonLastName())
                 {
                     workers[i].ShowWorkerWork();
                     break;

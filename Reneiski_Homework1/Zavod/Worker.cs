@@ -10,7 +10,7 @@
             this.position = position;
         }
 
-        public Worker() : base(null, null, 0)
+        public Worker() : base()
         {
         }
 
@@ -19,24 +19,19 @@
             base.ShowPersonInfo();
         }
 
-        public override ref string ShowPersonLastName()
+        public override string GetPersonLastName()
         {
-            return ref base.ShowPersonLastName();
+            return base.GetPersonLastName();
         }
 
-        //public string ShowWorkerLastName()
-        //{
-        //    return base.ShowPersonLastName();
-        //}
-
-        public override ref string ShowPersonFirstName()
+        public override string GetPersonFirstName()
         {
-            return ref base.ShowPersonFirstName();
+            return base.GetPersonFirstName();
         }
 
-        public override ref int ShowPersonAge()
+        public override int GetPersonAge()
         {
-            return ref base.ShowPersonAge();
+            return base.GetPersonAge();
         }
 
         public ref string PositionInfo()
@@ -46,12 +41,12 @@
 
         public void ShowWorkerName()
         {            
-            Console.WriteLine($"Name: {ShowPersonFirstName()} {ShowPersonLastName()}");            
+            Console.WriteLine($"Name: {GetPersonFirstName()} {GetPersonLastName()}");            
         }
 
         public void ShowWorkerAge()
         {
-            Console.WriteLine($"Age: {ShowPersonAge()}");
+            Console.WriteLine($"Age: {GetPersonAge()}");
         }
 
         public void ShowWorkerPosition()

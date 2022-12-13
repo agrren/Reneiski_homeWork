@@ -1,5 +1,5 @@
-using Reneiski_Homework1.Lecture5;
-using WorkerNamespace;
+using AutomationCources.Lecture_7.Homework;
+using Reneiski_Homework1.Lecture7.Task1;
 
 namespace Reneiski_Homework1
 {
@@ -7,22 +7,61 @@ namespace Reneiski_Homework1
     {
         static void Main(string[] args)
         {
-            Zavod Belaz = new Zavod(new Worker(), "Belaz", "The best of the best!");
-            Worker sasha = new Worker("Alex", "Ren", 41, "QA");
-            Worker ivan = new Worker("Ivan", "Ivanov", 54, "Director");
-            Worker semen = new Worker("Semen", "Semenov", 51, "QA");
+            MashedPotato mashedPotato = new MashedPotato();
+            FriedPotato friedPotato = new FriedPotato();
 
-            Belaz.SetWorker(sasha);
-            Belaz.SetWorker(ivan);
-            Belaz.SetWorker(semen);
+            Console.WriteLine("===Mashed Potato===");
+            mashedPotato.sortOfPotato = "Kolobok";
+            Console.WriteLine(mashedPotato.CheckTheSort);
+            mashedPotato.WayOfCooking();
+            mashedPotato.CheckPotato();
+            mashedPotato.WeightPotato();
+            mashedPotato.CutPotato();
+            Console.WriteLine($"The weight is: {mashedPotato.Weight} and the form is: {mashedPotato.Form}");
 
-            Belaz.ShowAllEmployeeInfo();
-            Belaz.ShowEmployeeNameInfo();
-            Belaz.ShowEmployeeAgeInfo();
-            Belaz.ShowEmployeePositionInfo();
-            Belaz.ShowEmployeeNumber();
-            Belaz.ShowEmployeeByPosition();
-            Belaz.ShowEmployeeWork();
+            Console.WriteLine("===Fried Potato===");
+            friedPotato.sortOfPotato = "Skarb";
+            Console.WriteLine(friedPotato.CheckTheSort);
+            friedPotato.WayOfCooking();
+            friedPotato.CheckPotato();
+            friedPotato.PeelPotato();
+            friedPotato.GratePotato();
+            Console.WriteLine($"Use {friedPotato.Grater} for grating and {friedPotato.Knife} for cutting!");
+
+            MobilePhone mobilePhone = new MobilePhone();
+            Polaroid polaroid = new Polaroid();
+            Printer printer = new Printer();
+
+            Console.WriteLine("===Mobile Phone===");
+            mobilePhone.numberOfPixelsInCamera = 100;
+            mobilePhone.modelName = "IPhone13";
+            mobilePhone.price = 800;
+            Console.WriteLine(mobilePhone.Description);
+            mobilePhone.TurnOn();
+            mobilePhone.TakePhoto();
+            mobilePhone.TunrnOff();
+
+            Console.WriteLine("===Polaroid===");
+            polaroid.numberOfPixelsInCamera = 150;
+            polaroid.modelName = "Honey";
+            polaroid.price = 300;
+            polaroid.paperWidth = 10;
+            polaroid.paperHeight = 12;
+            Console.WriteLine(polaroid.Description);
+            polaroid.TurnOn();
+            polaroid.TakePhoto();
+            polaroid.Print();
+            polaroid.TunrnOff();
+
+            Console.WriteLine("===Printer===");
+            printer.modelName = "HP";
+            printer.price = 500;
+            printer.paperWidth = 100;
+            printer.paperHeight = 120;
+            Console.WriteLine(printer.Description);
+            printer.TurnOn();
+            printer.Print();
+            printer.TunrnOff();
         }
     }
 }

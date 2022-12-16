@@ -1,6 +1,6 @@
 ﻿namespace Reneiski_Homework1.Lecture7.Task2
 {
-    interface PotatoActions
+    interface IPotatoActions
     {
         public string Knife { get; set; }
         public string Grater { get; set; }

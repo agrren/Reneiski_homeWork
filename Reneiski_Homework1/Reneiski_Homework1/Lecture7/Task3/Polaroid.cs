@@ -1,8 +1,9 @@
 ﻿using Reneiski_Homework1.Lecture7.Task3;
+using Reneiski_Homework1.Lecture7.Task3.Interfaces;
 
 namespace AutomationCources.Lecture_7.Homework
 {
-    public class Polaroid : Items, TurnOnOff, PhotoAction, PrintAction
+    public class Polaroid : Items, ITurnOnOff, IPhotoAction, IPrintAction
     {
         public Polaroid(int paperWidth, int paperHeight, double numberOfPixelsInCamera, string? modelName, decimal price)
         {
@@ -32,6 +33,6 @@ namespace AutomationCources.Lecture_7.Homework
 
         public void TurnOn() => Console.WriteLine("Press right side button");        
 
-        public void TunrnOff() => Console.WriteLine("Press Turn Off button");        
+        public override void TunrnOff() => Console.WriteLine("Press Turn Off button");        
     }
 }

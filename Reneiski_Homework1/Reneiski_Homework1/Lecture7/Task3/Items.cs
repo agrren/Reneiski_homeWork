@@ -8,23 +8,8 @@
         public int paperWidth;
         public int paperHeight;
 
-        public abstract string Description { get; }                      
-    }
+        public abstract string Description { get; }
 
-    interface TurnOnOff
-    {
-        public void TurnOn();
-
-        public void TunrnOff();
-    }
-
-    interface PhotoAction
-    {
-        public void TakePhoto();
-    }
-
-    interface PrintAction
-    {
-        public void Print();
+        public abstract void TunrnOff();        
     }
 }

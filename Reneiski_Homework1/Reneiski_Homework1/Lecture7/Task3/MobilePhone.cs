@@ -1,8 +1,9 @@
 ﻿using Reneiski_Homework1.Lecture7.Task3;
+using Reneiski_Homework1.Lecture7.Task3.Interfaces;
 
 namespace AutomationCources.Lecture_7.Homework
 {
-    public class MobilePhone : Items, TurnOnOff, PhotoAction
+    public class MobilePhone : Items, ITurnOnOff, IPhotoAction
     {
         public MobilePhone(double numberOfPixelsInCamera, string? modelName, decimal price)            
         {
@@ -28,6 +29,6 @@ namespace AutomationCources.Lecture_7.Homework
 
         public void TurnOn() => Console.WriteLine("Press left side button");        
 
-        public void TunrnOff() => Console.WriteLine("Press Turn Off button");        
+        public override void TunrnOff() => Console.WriteLine("Press Turn Off button");        
     }
 }

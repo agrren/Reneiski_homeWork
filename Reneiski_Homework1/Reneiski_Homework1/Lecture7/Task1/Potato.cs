@@ -2,19 +2,23 @@
 {
     public abstract class Potato
     {
-        public string? sortOfPotato;
+        private string? sortOfPotato;
 
-        public abstract void WayOfCooking();
+        public ref string SortOfPotato()
+        {
+            return ref sortOfPotato;
+        }
+
+        public abstract void Cook();
 
         public abstract string CheckTheSort { get; set; }
 
-        public void BadPotato()
-        {
-            
+        public void CheckIfBadPotato()
+        {            
             Console.WriteLine("Type yes if the potato bad and no if not");
-            string ifBad = Console.ReadLine();
+            var isBad = Console.ReadLine();
 
-            if (ifBad == "yes")
+            if (isBad == "yes")
             {
                 Console.WriteLine("Throw away!");
             }

@@ -11,18 +11,18 @@ namespace Reneiski_Homework1
             FriedPotato friedPotato = new FriedPotato();
 
             Console.WriteLine("===Mashed Potato===");
-            mashedPotato.sortOfPotato = "Kolobok";
+            mashedPotato.SortOfPotato() = "Kolobok";
             Console.WriteLine(mashedPotato.CheckTheSort);
-            mashedPotato.WayOfCooking();
+            mashedPotato.Cook();
             mashedPotato.CheckPotato();
             mashedPotato.WeightPotato();
             mashedPotato.CutPotato();
             Console.WriteLine($"The weight is: {mashedPotato.Weight} and the form is: {mashedPotato.Form}");
 
             Console.WriteLine("===Fried Potato===");
-            friedPotato.sortOfPotato = "Skarb";
+            friedPotato.SortOfPotato() = "Skarb";
             Console.WriteLine(friedPotato.CheckTheSort);
-            friedPotato.WayOfCooking();
+            friedPotato.Cook();
             friedPotato.CheckPotato();
             friedPotato.PeelPotato();
             friedPotato.GratePotato();

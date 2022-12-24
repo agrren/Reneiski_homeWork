@@ -11,18 +11,18 @@
 
                 Console.WriteLine("Input index of element in massive:");
 
-                string? inputedValue = Console.ReadLine();
+                var inputedValue = Console.ReadLine();
 
-                string? checkedValue = inputedValue.Equals(string.Empty) ? null : inputedValue;
+                var checkedValue = inputedValue.Equals(string.Empty) ? null : inputedValue;
 
-                int inputtedNumber = Int32.Parse(checkedValue);
+                var inputtedNumber = Int32.Parse(checkedValue);
 
                 if (inputtedNumber == 0)
                 {
                     throw new ZeroIndexException();
                 }
 
-                int massiveElement = massive[inputtedNumber];
+                var massiveElement = massive[inputtedNumber];
 
                 Console.WriteLine($"Massive element that has index {inputedValue} has value {massiveElement}");
             }

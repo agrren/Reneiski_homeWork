@@ -9,7 +9,7 @@ namespace Reneiski_Homework1.Lecture7.Task1
 
         public override void Cook() => Console.WriteLine("Boil and mash it!");        
 
-        public override string CheckTheSort { get { return SortOfPotato(); } set { SortOfPotato() = value; } }
+        public override string CheckedSortOfPotato { get { return SortOfPotato(); } set { SortOfPotato() = value; } }
 
         public void CheckPotato() => CheckIfBadPotato();        
 

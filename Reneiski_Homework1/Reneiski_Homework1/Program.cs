@@ -12,7 +12,7 @@ namespace Reneiski_Homework1
 
             Console.WriteLine("===Mashed Potato===");
             mashedPotato.SortOfPotato() = "Kolobok";
-            Console.WriteLine(mashedPotato.CheckTheSort);
+            Console.WriteLine(mashedPotato.CheckedSortOfPotato);
             mashedPotato.Cook();
             mashedPotato.CheckPotato();
             mashedPotato.WeightPotato();
@@ -21,7 +21,7 @@ namespace Reneiski_Homework1
 
             Console.WriteLine("===Fried Potato===");
             friedPotato.SortOfPotato() = "Skarb";
-            Console.WriteLine(friedPotato.CheckTheSort);
+            Console.WriteLine(friedPotato.CheckedSortOfPotato);
             friedPotato.Cook();
             friedPotato.CheckPotato();
             friedPotato.PeelPotato();

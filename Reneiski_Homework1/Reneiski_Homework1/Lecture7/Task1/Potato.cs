@@ -11,7 +11,7 @@
 
         public abstract void Cook();
 
-        public abstract string CheckTheSort { get; set; }
+        public abstract string CheckedSortOfPotato { get; set; }
 
         public void CheckIfBadPotato()
         {            

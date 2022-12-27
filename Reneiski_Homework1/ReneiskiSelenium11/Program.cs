@@ -8,8 +8,7 @@ namespace Reneiski_Homework1
 {
     public class Selenium
     {
-        private IWebDriver _driver;
-        private IWebElement _element;
+        private IWebDriver _driver;        
         private WebDriverWait _driverWait;
         private Actions _driverActions;
 
@@ -30,31 +29,15 @@ namespace Reneiski_Homework1
             var firstCheckBox = _driver.FindElement(By.XPath("//*[@class='rct-icon rct-icon-uncheck']"));
             firstCheckBox.Click();
 
-            var checkboxIsChecked = _driver.FindElement(By.XPath("//*[@class='rct-icon rct-icon-check']"));
-            string attributeClass = checkboxIsChecked.GetAttribute("class");
-            Assert.IsTrue(attributeClass.Contains("rct-icon rct-icon-check"));
+            var checkedCheckbox = _driver.FindElement(By.XPath("//*[@class='rct-icon rct-icon-check']"));
+            var isCheckboxChecked = checkedCheckbox.GetAttribute("class").Contains("check");
+            
+            Assert.IsTrue(isCheckboxChecked);
 
             var currentResult = _driver.FindElement(By.Id("result"));
             var currentResultText = currentResult.Text;
-
-            Assert.IsTrue(currentResultText.Contains("You have selected :"));
-            Assert.IsTrue(currentResultText.Contains("home"));
-            Assert.IsTrue(currentResultText.Contains("desktop"));
-            Assert.IsTrue(currentResultText.Contains("notes"));
-            Assert.IsTrue(currentResultText.Contains("commands"));
-            Assert.IsTrue(currentResultText.Contains("documents"));
-            Assert.IsTrue(currentResultText.Contains("workspace"));
-            Assert.IsTrue(currentResultText.Contains("react"));
-            Assert.IsTrue(currentResultText.Contains("angular"));
-            Assert.IsTrue(currentResultText.Contains("veu"));
-            Assert.IsTrue(currentResultText.Contains("office"));
-            Assert.IsTrue(currentResultText.Contains("public"));
-            Assert.IsTrue(currentResultText.Contains("private"));
-            Assert.IsTrue(currentResultText.Contains("classified"));
-            Assert.IsTrue(currentResultText.Contains("general"));
-            Assert.IsTrue(currentResultText.Contains("downloads"));
-            Assert.IsTrue(currentResultText.Contains("wordFile"));
-            Assert.IsTrue(currentResultText.Contains("excelFile"));
+            
+            Assert.AreEqual(currentResultText, ("You have selected :\r\nhome\r\ndesktop\r\nnotes\r\ncommands\r\ndocuments\r\nworkspace\r\nreact\r\nangular\r\nveu\r\noffice\r\npublic\r\nprivate\r\nclassified\r\ngeneral\r\ndownloads\r\nwordFile\r\nexcelFile"));
         }
 
         [Test]
@@ -68,8 +51,7 @@ namespace Reneiski_Homework1
             var currentResult = _driver.FindElement(By.XPath("//*[@class='mt-3']"));
             var currentResultText = currentResult.Text;
 
-            Assert.IsTrue(currentResultText.Contains("You have selected "));
-            Assert.IsTrue(currentResultText.Contains("Yes"));
+            Assert.AreEqual(currentResultText, "You have selected Yes");            
 
             var radioButtonImpressive = _driver.FindElement(By.XPath("//*[@for='impressiveRadio']"));
             radioButtonImpressive.Click();
@@ -77,87 +59,97 @@ namespace Reneiski_Homework1
             var currentResult1 = _driver.FindElement(By.XPath("//*[@class='mt-3']"));
             var currentResultText1 = currentResult1.Text;
 
-            Assert.IsTrue(currentResultText1.Contains("You have selected "));
-            Assert.IsTrue(currentResultText1.Contains("Impressive"));
+            Assert.AreEqual(currentResultText1, "You have selected Impressive");            
         }
 
         [Test]
         public void ThirdWebTablesTest()
         {
+            var firstName = "Alex";
+            var lastName = "Ren";
+            var userEmail = "Ren@tut.by";
+            var userAge = "41";
+            var userSalary = "20000";
+            var userDepartment = "QA";
+            var editedUserSalary = "22000";            
+
             _driver.Navigate().GoToUrl("https://demoqa.com/webtables");
 
-            var currentResult = _driver.FindElement(By.XPath("//*[@class='rt-table']"));
-            var currentResultText = currentResult.Text;
+            var currentCierra = _driver.FindElement(By.XPath("(//*[@class=\"rt-tr-group\"]//div[@role='row'])[1]//div[@role='gridcell'][count(//*[contains(text(),'First Name')]//ancestor::div[1]//preceding-sibling::div)]"));
+            var currentCierraText = currentCierra.Text;
 
-            Assert.IsTrue(currentResultText.Contains("Cierra"));
-            Assert.IsTrue(currentResultText.Contains("Vega"));
-            Assert.IsTrue(currentResultText.Contains("39"));
-            Assert.IsTrue(currentResultText.Contains("cierra@example.com"));
-            Assert.IsTrue(currentResultText.Contains("10000"));
+            Assert.AreEqual(currentCierraText, ("Cierra"));
+
+            var currentVega = _driver.FindElement(By.XPath("(//*[@class=\"rt-tr-group\"]//div[@role='row'])[1]//div[@role='gridcell'][count(//*[contains(text(),'Last Name')]//ancestor::div[1]//preceding-sibling::div)]"));
+            var currentVegaText = currentVega.Text;
+
+            Assert.AreEqual(currentVegaText, ("Vega"));
+
+            var currentAge = _driver.FindElement(By.XPath("(//*[@class=\"rt-tr-group\"]//div[@role='row'])[1]//div[@role='gridcell'][count(//*[contains(text(),'Age')]//ancestor::div[1]//preceding-sibling::div)]"));
+            var currentAgeText = currentAge.Text;
+
+            Assert.AreEqual(currentAgeText, ("39"));
+
+            var currentEmail = _driver.FindElement(By.XPath("(//*[@class=\"rt-tr-group\"]//div[@role='row'])[1]//div[@role='gridcell'][count(//*[contains(text(),'Email')]//ancestor::div[1]//preceding-sibling::div)]"));
+            var currentEmailText = currentEmail.Text;
+
+            Assert.AreEqual(currentEmailText, ("cierra@example.com"));
+
+            var currentSalary = _driver.FindElement(By.XPath("(//*[@class=\"rt-tr-group\"]//div[@role='row'])[1]//div[@role='gridcell'][count(//*[contains(text(),'Salary')]//ancestor::div[1]//preceding-sibling::div)]"));
+            var currentSalaryText = currentSalary.Text;
+
+            Assert.AreEqual(currentSalaryText, ("10000"));
+
+            var currentDepartment = _driver.FindElement(By.XPath("(//*[@class=\"rt-tr-group\"]//div[@role='row'])[1]//div[@role='gridcell'][count(//*[contains(text(),'Department')]//ancestor::div[1]//preceding-sibling::div)]"));
+            var currentDepartmentText = currentDepartment.Text;
+
+            Assert.AreEqual(currentDepartmentText, ("Insurance"));
 
             var addButton = _driver.FindElement(By.XPath("//*[@id='addNewRecordButton']"));
             addButton.Click();
-
-            var firstName = "Alex";
+            
             var firstNameTextBox = _driver.FindElement(By.XPath("//*[@id='firstName']"));
             firstNameTextBox.SendKeys(firstName);
-
-            var lastName = "Ren";
+            
             var lastNameTextBox = _driver.FindElement(By.XPath("//*[@id='lastName']"));
             lastNameTextBox.SendKeys(lastName);
-
-            var userEmail = "Ren@tut.by";
+            
             var userEmailTextBox = _driver.FindElement(By.XPath("//*[@id='userEmail']"));
             userEmailTextBox.SendKeys(userEmail);
-
-            var userAge = "41";
+            
             var userAgeTextBox = _driver.FindElement(By.XPath("//*[@id='age']"));
             userAgeTextBox.SendKeys(userAge);
-
-            var userSalary = "20000";
+            
             var userSalaryTextBox = _driver.FindElement(By.XPath("//*[@id='salary']"));
             userSalaryTextBox.SendKeys(userSalary);
-
-            var userDepartment = "QA";
+            
             var userDepartmentTextBox = _driver.FindElement(By.XPath("//*[@id='department']"));
             userDepartmentTextBox.SendKeys(userDepartment);
 
             var submitButton = _driver.FindElement(By.XPath("//*[@id='submit']"));
             submitButton.Click();
 
-            var currentResult1 = _driver.FindElement(By.XPath("//*[@class='rt-table']"));
+            var currentResult1 = _driver.FindElement(By.XPath("//*[@class='rt-tbody']/div[4]"));
             var currentResultText1 = currentResult1.Text;
 
-            Assert.IsTrue(currentResultText1.Contains(firstName));
-            Assert.IsTrue(currentResultText1.Contains(lastName));
-            Assert.IsTrue(currentResultText1.Contains(userAge));
-            Assert.IsTrue(currentResultText1.Contains(userEmail));
-            Assert.IsTrue(currentResultText1.Contains(userSalary));
-            Assert.IsTrue(currentResultText1.Contains(userDepartment));
+            Assert.AreEqual(currentResultText1, ($"{firstName}\r\n{lastName}\r\n{userAge}\r\n{userEmail}\r\n{userSalary}\r\n{userDepartment}"));
 
             var editButton = _driver.FindElement(By.XPath("//*[@id='edit-record-4']"));
             editButton.Click();
-
-            var editedUserSalary = "22000";
-            var editedUserSalaryTextBox = _driver.FindElement(By.XPath("//*[@id='salary']"));
-            editedUserSalaryTextBox.Clear();
-            editedUserSalaryTextBox.SendKeys(editedUserSalary);
+            
+            _driver.FindElement(By.XPath("//*[@id='salary']")).Clear();
+            _driver.FindElement(By.XPath("//*[@id='salary']")).SendKeys(editedUserSalary);
 
             var submitButtonAfterEdit = _driver.FindElement(By.XPath("//*[@id='submit']"));
-            submitButtonAfterEdit.Click();
+            submitButtonAfterEdit.Click();            
 
-            var deleteButton = _driver.FindElement(By.XPath("//*[@id='delete-record-4']"));
-            deleteButton.Click();
-
-            var currentResult2 = _driver.FindElement(By.XPath("//*[@class='rt-table']"));
+            var currentResult2 = _driver.FindElement(By.XPath("//*[@class='rt-tbody']/div[4]"));
             var currentResultText2 = currentResult2.Text;
 
-            Assert.IsFalse(currentResultText2.Contains(firstName));
-            Assert.IsFalse(currentResultText2.Contains(lastName));
-            Assert.IsFalse(currentResultText2.Contains(userAge));
-            Assert.IsFalse(currentResultText2.Contains(userEmail));
-            Assert.IsFalse(currentResultText2.Contains(userSalary));
-            Assert.IsFalse(currentResultText2.Contains(userDepartment));
+            Assert.AreEqual(currentResultText2, ($"{firstName}\r\n{lastName}\r\n{userAge}\r\n{userEmail}\r\n{editedUserSalary}\r\n{userDepartment}"));
+
+            var deleteButton = _driver.FindElement(By.XPath("//*[@id='delete-record-4']"));
+            deleteButton.Click();            
         }
 
         [Test]
@@ -171,7 +163,7 @@ namespace Reneiski_Homework1
             var doubleClickResult = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='doubleClickMessage']")));
             var doubleClickResultText = doubleClickResult.Text;
 
-            Assert.IsTrue(doubleClickResultText.Contains("You have done a double click"));
+            Assert.AreEqual(doubleClickResultText, ("You have done a double click"));
 
             var rightClickButton = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='rightClickBtn']")));
             _driverActions.ContextClick(rightClickButton).Perform();
@@ -179,62 +171,63 @@ namespace Reneiski_Homework1
             var rightClickResult = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='rightClickMessage']")));
             var rightClickResultText = rightClickResult.Text;
 
-            Assert.IsTrue(rightClickResultText.Contains("You have done a right click"));
+            Assert.AreEqual(rightClickResultText, ("You have done a right click"));
 
-            var dynamicClickButton = _driverWait.Until(drv => drv.FindElement(By.XPath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/div[3]/button")));
+            var dynamicClickButton = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[(text()='Click Me')]")));
             dynamicClickButton.Click();
 
             var dynamicClickResult = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='dynamicClickMessage']")));
             var dynamicClickResultText = dynamicClickResult.Text;
 
-            Assert.IsTrue(dynamicClickResultText.Contains("You have done a dynamic click"));
+            Assert.AreEqual(dynamicClickResultText, ("You have done a dynamic click"));
         }
 
         [Test]
         public void FifthLinksTest()
         {
-            _driver.Navigate().GoToUrl("https://demoqa.com/links");
+            const string newUrl = "https://demoqa.com/";
 
-            var simpleLink = _driver.FindElement(By.XPath("//*[@id='simpleLink']"));
-            simpleLink.Click();
+            _driver.Navigate().GoToUrl("https://demoqa.com/links");
+            
+            var homeButton = _driver.FindElement(By.XPath("//*[@id='simpleLink']"));
+            homeButton.Click();
 
             var currentUrl = _driver.FindElement(By.XPath("//p/a[@href='https://demoqa.com']"));
             var currentUrlResult = currentUrl.GetAttribute("href");
 
-            List<string> windowHandles = _driver.WindowHandles.ToList();
+            var windowHandles = _driver.WindowHandles.ToList();
             _driver.SwitchTo().Window(windowHandles.Last());
-
-            var newUrl = _driver.Url;
+            
             Assert.AreEqual(newUrl, currentUrlResult);
 
             _driver.SwitchTo().Window(windowHandles.First());
 
-            var createdLink = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='created']")));
-            createdLink.Click();
+            var createdButton = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='created']")));
+            createdButton.Click();
 
-            var createdLinkResult = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='linkResponse']")));
-            var createdLinkResultText = createdLinkResult.Text;
+            var createdButtonResult = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='linkResponse']")));
+            var createdButtonResultText = createdButtonResult.Text;
 
-            Assert.IsTrue(createdLinkResultText.Contains("Link has responded with staus 201 and status text Created"));
+            Assert.AreEqual(createdButtonResultText, ("Link has responded with staus 201 and status text Created"));
 
-            var noContentLink = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='no-content']")));
-            noContentLink.Click();
+            var noContentButton = _driverWait.Until(drv => drv.FindElement(By.XPath("//*[@id='no-content']")));
+            noContentButton.Click();
 
-            var noContentLinkResult = _driverWait.Until(drv => drv.FindElement(By.XPath("//p[@id='linkResponse']")));
-            var noContentLinkResultText = _driverWait.Until(drv => noContentLinkResult.Text);
+            var noContentButtonResult = _driverWait.Until(drv => drv.FindElement(By.XPath("//p[@id='linkResponse']")));
+            var noContentButtonResultText = _driverWait.Until(drv => noContentButtonResult.Text);
 
-            while (noContentLinkResultText != "Link has responded with staus 204 and status text No Content")
+            while (noContentButtonResultText != "Link has responded with staus 204 and status text No Content")
 
                 try
                 {
-                    noContentLinkResultText = _driverWait.Until(drv => noContentLinkResult.Text);
+                    noContentButtonResultText = _driverWait.Until(drv => noContentButtonResult.Text);
                 }
                 catch (Exception)
                 {
                     continue;
                 }
 
-            Assert.IsTrue(noContentLinkResultText.Contains("Link has responded with staus 204 and status text No Content"));
+            Assert.AreEqual(noContentButtonResultText, ("Link has responded with staus 204 and status text No Content"));
         }
 
         [OneTimeTearDown]

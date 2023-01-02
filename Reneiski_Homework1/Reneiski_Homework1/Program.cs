@@ -2,11 +2,11 @@
 
 namespace Reneiski_Homework1
 {
-    public class Program : Lecture9Task
+    public class Program
     {
         static void Main(string[] args)
         {
-            Task3();
+            Lecture9Task.Task3();
         }
     }
 }

@@ -1,27 +1,37 @@
 ﻿namespace WorkerNamespace
 {
-    public class Worker
+    public class Worker : Person
     {
-        private string firstName;
-        private string lastName;
-        private int age;
         private string position;
 
         public Worker(string firstName, string lastName, int age, string position)
+            : base(firstName, lastName, age)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.age = age;
             this.position = position;
         }
 
-        public Worker()
+        public Worker() : base()
         {
         }
 
-        public ref string LastNameInfo()
+        public override void ShowPersonInfo()
         {
-            return ref lastName;
+            base.ShowPersonInfo();
+        }
+
+        public override string GetPersonLastName()
+        {
+            return base.GetPersonLastName();
+        }
+
+        public override string GetPersonFirstName()
+        {
+            return base.GetPersonFirstName();
+        }
+
+        public override int GetPersonAge()
+        {
+            return base.GetPersonAge();
         }
 
         public ref string PositionInfo()
@@ -31,12 +41,12 @@
 
         public void ShowWorkerName()
         {            
-            Console.WriteLine($"Name: {firstName} {lastName}");            
+            Console.WriteLine($"Name: {GetPersonFirstName()} {GetPersonLastName()}");            
         }
 
         public void ShowWorkerAge()
         {
-            Console.WriteLine($"Age: {age}");
+            Console.WriteLine($"Age: {GetPersonAge()}");
         }
 
         public void ShowWorkerPosition()

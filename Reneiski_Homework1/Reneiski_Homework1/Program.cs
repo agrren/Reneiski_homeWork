@@ -4,7 +4,7 @@ namespace Reneiski_Homework1
 {
     public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Lecture9Task.Task3();
         }

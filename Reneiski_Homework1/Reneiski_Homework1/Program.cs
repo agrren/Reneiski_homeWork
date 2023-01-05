@@ -1,4 +1,4 @@
-using Reneiski_Homework1.Lecture8;
+﻿using Reneiski_Homework1.Lecture9;
 
 namespace Reneiski_Homework1
 {
@@ -6,9 +6,7 @@ namespace Reneiski_Homework1
     {
         static void Main()
         {
-            ShowMassiveElement showMassiveElement = new ShowMassiveElement();
-
-            showMassiveElement.ShowMassive();
+            Lecture9Task.Task3();
         }
     }
 }

@@ -1,4 +1,4 @@
-using Reneiski_Homework1.Lecture8;
+using Reneiski_Homework1.Lecture10;
 
 namespace Reneiski_Homework1
 {
@@ -6,9 +6,14 @@ namespace Reneiski_Homework1
     {
         static void Main()
         {
-            ShowMassiveElement showMassiveElement = new ShowMassiveElement();
+            var example = ManWoman<Man>(3);
+            example.ToString();
+        }
 
-            showMassiveElement.ShowMassive();
+        static Generic<T> ManWoman<T>(int number) where T : Human
+        {
+            var ex = new Generic<T>(number);
+            return ex;
         }
     }
 }

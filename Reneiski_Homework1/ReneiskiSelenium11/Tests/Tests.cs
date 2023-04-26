@@ -1,119 +1,118 @@
 ﻿using NUnit.Framework;
-using ReneiskiSelenium11.PageObjects.ButtonPage;
-using ReneiskiSelenium11.PageObjects.CheckBoxPage;
-using ReneiskiSelenium11.PageObjects.LinksPage;
-using ReneiskiSelenium11.PageObjects.RadioButtonPage;
-using ReneiskiSelenium11.PageObjects.WebTablePage;
-using ReneiskiSelenium11.PageObjects.WebTablePage.RegistrationForm;
+using ReneiskiSelenium11.Common.Extensions;
+using ReneiskiSelenium11.Data;
+using ReneiskiSelenium11.Data.Constants;
+using ReneiskiSelenium11.PageObjects;
+using ReneiskiSelenium11.PageObjects.Pages;
 
 namespace ReneiskiSelenium11.Tests
 {
-    public class Selenium : BaseTest
+    public class DemoQATests : BaseTest
     {
 
         [Test]
         public void FirstCheckBoxTest()
         {
-            CheckBoxPage check = new CheckBoxPage(_driver);
+            var check = new CheckBoxPage();
 
-            check.GoToPage("checkbox");
+            GenericPages.CheckBoxPage.GoToCheckBoxPage();
 
-            check.ClickCheckBox();
+            GenericPages.CheckBoxPage.ClickCheckBox();
 
             Assert.IsTrue(check.GetAttributeCheckBox());
 
-            Assert.AreEqual(check.ExpectedText(), check.TextResult());
+            Assert.AreEqual(Constants.expectedText, check.GetTextResult());
         }
 
         [Test]
         public void SecondRadioButtonTest()
         {
-            RadioButtonPage buttonPage = new RadioButtonPage(_driver);
+            var buttonPage = new RadioButtonPage();
 
-            buttonPage.GoToPage("radio-button");
+            GenericPages.RadioButtonPage.GoToRadioButtonPage();
 
-            buttonPage.yesRadiobtn.Click();
+            GenericPages.RadioButtonPage.YesRadioBtnClick();
 
-            Assert.AreEqual("You have selected Yes", buttonPage.TextYesResult());
+            Assert.AreEqual("You have selected Yes", buttonPage.GetTextYesResult());
 
-            buttonPage.impressiveRadioBtn.Click();
+            GenericPages.RadioButtonPage.ImpRadioBtnClick();
 
-            Assert.AreEqual("You have selected Impressive", buttonPage.TextYesResult());
+            Assert.AreEqual("You have selected Impressive", buttonPage.GetTextYesResult());
         }
 
         [Test]
         public void ThirdWebTablesTest()
         {
-            WebTablePage webTablePage = new WebTablePage(_driver);
-            RegFormPage regForm = new RegFormPage(_driver);
+            var webTablePage = new WebTablePage();
 
-            webTablePage.GoToPage("webtables");
+            GenericPages.WebTablePage.GoToWebTablesPage();
 
-            Assert.AreEqual("Cierra", webTablePage.ReturnText(webTablePage.cCierra));
-            Assert.AreEqual("Vega", webTablePage.ReturnText(webTablePage.cVega));
-            Assert.AreEqual("39", webTablePage.ReturnText(webTablePage.cAge));
-            Assert.AreEqual("cierra@example.com", webTablePage.ReturnText(webTablePage.cEmail));
-            Assert.AreEqual("10000", webTablePage.ReturnText(webTablePage.cSalary));
-            Assert.AreEqual("Insurance", webTablePage.ReturnText(webTablePage.cDepartament));
+            Assert.AreEqual("Cierra", webTablePage.GetCellText(TestSettings.cCierra));
+            Assert.AreEqual("Vega", webTablePage.GetCellText(TestSettings.cVega));
+            Assert.AreEqual("39", webTablePage.GetCellText(TestSettings.cAge));
+            Assert.AreEqual("cierra@example.com", webTablePage.GetCellText(TestSettings.cEmail));
+            Assert.AreEqual("10000", webTablePage.GetCellText(TestSettings.cSalary));
+            Assert.AreEqual("Insurance", webTablePage.GetCellText(TestSettings.cDepartament));
 
-            webTablePage.ClickBtn("addNewRecordButton");
+            GenericPages.WebTablePage.ClickAddButton();
 
-            regForm.FillInValues("firstName");
-            regForm.FillInValues("lastName");
-            regForm.FillInValues("userEmail");
-            regForm.FillInValues("age");
-            regForm.FillInValues("salary");
-            regForm.FillInValues("department");
+            GenericPages.RegFormPage.EnterFirstName();
+            GenericPages.RegFormPage.EnterLastName();
+            GenericPages.RegFormPage.EnterUserEmail();
+            GenericPages.RegFormPage.EnterAge();
+            GenericPages.RegFormPage.EnterSalary();
+            GenericPages.RegFormPage.EnterDepartment();
 
-            webTablePage.ClickBtn("submit");
+            GenericPages.WebTablePage.ClickSubmitButton();
 
-            Assert.AreEqual($"{regForm.firstName}\r\n{regForm.lastName}\r\n{regForm.age}\r\n{regForm.userEmail}\r\n{regForm.salary}\r\n{regForm.department}", webTablePage.ReturnTextResult());
+            Assert.AreEqual($"{TestSettings.firstName}"+$"{TestSettings.lastName}"+$"{TestSettings.age}"+$"{TestSettings.userEmail}"+$"{TestSettings.salary}"+$"{TestSettings.department}", webTablePage.ReturnTextResult());
 
-            webTablePage.ClickBtn("edit-record-4");
-            regForm.ClearSalary();
-            regForm.FillInEditedValue("salary");
-            webTablePage.ClickBtn("submit");
+            GenericPages.WebTablePage.ClickEditButton();
+            GenericPages.RegFormPage.ClearSalary();
+            GenericPages.RegFormPage.EnterEditedSalary();
+            GenericPages.WebTablePage.ClickSubmitButton();
 
-            Assert.AreEqual($"{regForm.firstName}\r\n{regForm.lastName}\r\n{regForm.age}\r\n{regForm.userEmail}\r\n{regForm.editedUserSalary}\r\n{regForm.department}", webTablePage.ReturnTextResult());
+            Assert.AreEqual($"{TestSettings.firstName}"+$"{TestSettings.lastName}"+$"{TestSettings.age}"+$"{TestSettings.userEmail}"+$"{TestSettings.editedUserSalary}"+$"{TestSettings.department}", webTablePage.ReturnTextResult());
 
-            webTablePage.ClickBtn("delete-record-4");
+            GenericPages.WebTablePage.ClickDeleteButton();
         }
 
         [Test]
         public void ForthButtonsTest()
         {
-            ButtonPage buttonPage = new ButtonPage(_driver);
+            var buttonPage = new ButtonPage();
 
-            buttonPage.GoToPage("buttons");
+            GenericPages.ButtonPage.GoToButtonsPage();
 
-            buttonPage.ClickButton("doubleClickBtn");
+            GenericPages.ButtonPage.DoubleClick();
             Assert.AreEqual("You have done a double click", buttonPage.TextResult("doubleClickMessage"));
 
-            buttonPage.ClickButton("rightClickBtn");
+            GenericPages.ButtonPage.RightClick();
             Assert.AreEqual("You have done a right click", buttonPage.TextResult("rightClickMessage"));
 
-            buttonPage.dynamicClick.Click();
+            GenericPages.ButtonPage.DynamicClick();
             Assert.AreEqual("You have done a dynamic click", buttonPage.TextResult("dynamicClickMessage"));
         }
 
         [Test]
         public void FifthLinksTest()
         {
-            LinksPage linksPage = new LinksPage(_driver);
+            var linksPage = new LinksPage();
 
-            linksPage.GoToPage("links");
+            GenericPages.LinksPage.GoToLinksPage();
 
-            linksPage.ClickBtn("simpleLink");
-            linksPage.SwitchPages("last");
-            Assert.AreEqual(linksPage.newUrl, linksPage.GetUrlAttribute());
+            GenericPages.LinksPage.ClickSimpleLink();
 
-            linksPage.SwitchPages("first");
+            WebDriverExtensions.SwitchToTheLastWindow();
+            Assert.AreEqual(Constants.newUrl, linksPage.GetUrlAttribute());
 
-            linksPage.ClickBtn("created");
+            WebDriverExtensions.SwitchToTheFirstWindow();
+
+            GenericPages.LinksPage.ClickCreated();
             Assert.AreEqual("Link has responded with staus 201 and status text Created", linksPage.TextResult("linkResponse"));
 
-            linksPage.ClickBtn("no-content");
-            var noContentButtonResultText = _driverWait.Until(drv => linksPage.TextResult("linkResponse") == linksPage.noContent);
+            GenericPages.LinksPage.ClickNoContent();
+            var noContentButtonResultText = Driver.GetWebDriverWait().Until(drv => linksPage.TextResult("linkResponse") == Constants.noContent);
 
             Assert.IsTrue(noContentButtonResultText);
         }

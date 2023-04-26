@@ -1,20 +1,19 @@
 ﻿using OpenQA.Selenium;
-using ReneiskiSelenium11.Utilities;
+using ReneiskiSelenium11.Common.Drivers;
+using ReneiskiSelenium11.Common.WebElements;
 
 namespace ReneiskiSelenium11.PageObjects
 {
-    public class BasePage : Utility
+    public class BasePage : WebDriverFactory
     {
-        public BasePage(IWebDriver _driver) : base(_driver)
-        {
-        }
+        private MyWebElement elementsByXPath = new MyWebElement(By.XPath("//*[@class=\"card-body\"]//*[contains(text(), 'Elements')]"));
 
-        public string GetPageUrl(string pageUrl)
-        {
-            string url = string.Format("https://demoqa.com/{0}", pageUrl);
-            return url;
-        }
+        public void GoToElemntsPage() => elementsByXPath.Click();
 
-        public void GoToPage(string url) => _driver.Navigate().GoToUrl(GetPageUrl(url));
+        public string TextResult(string value)
+        {
+            var elem = MyWebElement.FindElementByXPathId(value);
+            return elem.Text;
+        }
     }
 }

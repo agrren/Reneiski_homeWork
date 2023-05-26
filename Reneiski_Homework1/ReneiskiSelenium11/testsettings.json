@@ -4,23 +4,5 @@
     "Urls": {
       "Page": "https://demoqa.com/"
     }
-  },
-  "ColumnName": {
-    "cCierra": "First Name",
-    "cVega": "Last Name",
-    "cAge": "Age",
-    "cEmail": "Email",
-    "cSalary": "Salary",
-    "cDepartament": "Department"
-  },
-  "RegFormValue": {
-    "firstName": "Alex",
-    "lastName": "Ren",
-    "userEmail": "Ren@tut.by",
-    "age": "41",
-    "salary": "20000",
-    "department": "QA",
-    "editedUserSalary": "22000"
   }
 }
-

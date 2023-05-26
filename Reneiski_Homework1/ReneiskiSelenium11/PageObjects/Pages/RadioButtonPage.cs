@@ -5,17 +5,17 @@ namespace ReneiskiSelenium11.PageObjects.Pages
 {
     public class RadioButtonPage : BasePage
     {
-        private MyWebElement classMt = new MyWebElement(By.XPath("//*[@class='mt-3']"));
-        private MyWebElement radioButtonPage = new MyWebElement(By.XPath("//*[contains(text(), 'Radio Button')]"));
-        private MyWebElement yesRadiobtn = new MyWebElement(By.XPath("//*[@for='yesRadio']"));
-        private MyWebElement impressiveRadioBtn = new MyWebElement(By.XPath("//*[@for='impressiveRadio']"));
+        private MyWebElement TextResultAfterClick = new MyWebElement(By.XPath("//*[@class='mt-3']"));
+        private MyWebElement RadioButtonPagePath = new MyWebElement(By.XPath("//*[contains(text(), 'Radio Button')]"));
+        private MyWebElement YesRadioButton = new MyWebElement(By.XPath("//*[@for='yesRadio']"));
+        private MyWebElement ImpressiveRadioButton = new MyWebElement(By.XPath("//*[@for='impressiveRadio']"));
 
-        public void YesRadioBtnClick() => yesRadiobtn.Click();
+        public void ClickYesRadioButton() => YesRadioButton.Click();
 
-        public void ImpRadioBtnClick() => impressiveRadioBtn.Click();
+        public void ClickImpressiveRadioButton() => ImpressiveRadioButton.Click();
 
-        public string GetTextYesResult() => classMt.Text;
+        public string GetTextResult() => TextResultAfterClick.Text;
 
-        public void GoToRadioButtonPage() => radioButtonPage.Click();
+        public void GoToRadioButtonPage() => RadioButtonPagePath.Click();
     }
 }

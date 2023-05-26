@@ -5,7 +5,7 @@ using ReneiskiSelenium11.PageObjects;
 
 namespace ReneiskiSelenium11.Tests
 {
-    public class BaseTest : WebDriverFactory
+    public class BaseTest
     {
         public BaseTest()
         {
@@ -15,7 +15,7 @@ namespace ReneiskiSelenium11.Tests
         public void OneTimeSetup()
         {
             WebDriverFactory.InitializeDriver();
-            Driver.Navigate().GoToUrl(TestSettings.PageUrl);
+            WebDriverFactory.Driver.Navigate().GoToUrl(TestSettings.PageUrl);
             GenericPages.BasePage.GoToElemntsPage();
         }
 

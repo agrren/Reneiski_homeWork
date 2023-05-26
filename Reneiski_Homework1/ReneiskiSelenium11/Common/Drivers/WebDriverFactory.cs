@@ -16,7 +16,7 @@ namespace ReneiskiSelenium11.Common.Drivers
         {
             get
             {
-                if(!DriverCollection.Keys.Contains(TestContextValues.ExecutableClassName))
+                if (!DriverCollection.Keys.Contains(TestContextValues.ExecutableClassName))
                 {
                     InitializeDriver();
                 }

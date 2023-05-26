@@ -5,17 +5,17 @@ namespace ReneiskiSelenium11.PageObjects.Pages
 {
     public class CheckBoxPage : BasePage
     {
-        private MyWebElement result = new MyWebElement(By.Id("result"));
-        private MyWebElement classUnCheck = new MyWebElement(By.XPath("//*[@class='rct-icon rct-icon-uncheck']"));
-        private MyWebElement classCheck = new MyWebElement(By.XPath("//*[@class='rct-icon rct-icon-check']"));
-        private MyWebElement checkBoxPage = new MyWebElement(By.XPath("//*[contains(text(), 'Check Box')]"));
+        private MyWebElement TextOfResult = new MyWebElement(By.Id("result"));
+        private MyWebElement CheckBoxHome = new MyWebElement(By.XPath("//*[@class='rct-icon rct-icon-uncheck']"));
+        private MyWebElement CheckBoxAttribute = new MyWebElement(By.XPath("//*[@class='rct-icon rct-icon-check']"));
+        private MyWebElement CheckBoxPagePath = new MyWebElement(By.XPath("//*[contains(text(), 'Check Box')]"));
 
-        public void ClickCheckBox() => classUnCheck.Click();
+        public void ClickHomeCheckBox() => CheckBoxHome.Click();
 
-        public bool GetAttributeCheckBox() => classCheck.GetAttribute("class").Contains("check");
+        public bool IsHomeCheckBoxChecked() => CheckBoxAttribute.GetAttribute("class").Contains("check");
 
-        public string GetTextResult() => result.Text;
+        public string GetTextResult() => TextOfResult.Text;
 
-        public void GoToCheckBoxPage() => checkBoxPage.Click();
+        public void GoToCheckBoxPage() => CheckBoxPagePath.Click();
     }
 }

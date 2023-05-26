@@ -75,19 +75,5 @@ namespace ReneiskiSelenium11.Common.WebElements
 
             return element;
         }
-
-        public void ClickButton(string value)
-        {
-            var elem = MyWebElement.FindElementByXPathId(value);
-            switch (value)
-            {
-                case "doubleClickBtn":
-                    WebDriverFactory.Actions.DoubleClick(elem).Perform();
-                    break;
-                case "rightClickBtn":
-                    WebDriverFactory.Actions.ContextClick(elem).Perform();
-                    break;
-            }
-        }
     }
 }

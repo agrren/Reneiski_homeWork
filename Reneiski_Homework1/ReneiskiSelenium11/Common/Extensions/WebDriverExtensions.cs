@@ -9,7 +9,7 @@ namespace ReneiskiSelenium11.Common.Extensions
         public static WebDriverWait GetWebDriverWait(this IWebDriver driver, int timeoutSeconds = 30, TimeSpan? pollingInterval = null, params Type[] exceptionTypes)
         {
             var webDriverWait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutSeconds));
-            if(pollingInterval !=null)
+            if (pollingInterval != null)
             {
                 webDriverWait.PollingInterval = (TimeSpan)pollingInterval;
             }

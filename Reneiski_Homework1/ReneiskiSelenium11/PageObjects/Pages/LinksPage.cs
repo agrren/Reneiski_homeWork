@@ -5,20 +5,23 @@ namespace ReneiskiSelenium11.PageObjects.Pages
 {
     public class LinksPage : BasePage
     {
-        private MyWebElement linksPage = new MyWebElement(By.XPath("//*[contains(text(), 'Links')]"));
-        private MyWebElement currentUrl = new MyWebElement(By.XPath("//a[@href='https://demoqa.com']"));
-        private MyWebElement simpleLink = new MyWebElement(By.XPath("//*[@id='simpleLink']"));
-        private MyWebElement created = new MyWebElement(By.XPath("//*[@id='created']"));
-        private MyWebElement noContent = new MyWebElement(By.XPath("//*[@id='no-content']"));
+        private MyWebElement LinksPagePath = new MyWebElement(By.XPath("//*[contains(text(), 'Links')]"));
+        private MyWebElement CurrentUrlAttribute = new MyWebElement(By.XPath("//a[@href='https://demoqa.com']"));
+        private MyWebElement HomeLink = new MyWebElement(By.XPath("//*[@id='simpleLink']"));
+        private MyWebElement CreatedLink = new MyWebElement(By.XPath("//*[@id='created']"));
+        private MyWebElement NoContentLink = new MyWebElement(By.XPath("//*[@id='no-content']"));
+        private MyWebElement CreatedLinkTextResult = new MyWebElement(By.XPath("//*[@id='linkResponse']"));
 
-        public string GetUrlAttribute() => currentUrl.GetAttribute("href");
+        public string GetUrlAttribute() => CurrentUrlAttribute.GetAttribute("href");
 
-        public void ClickSimpleLink() => simpleLink.Click();
+        public string ReturnCreatedLinkTextResult() => CreatedLinkTextResult.Text;
 
-        public void ClickCreated() => created.Click();
+        public void ClickHomeLink() => HomeLink.Click();
 
-        public void ClickNoContent() => noContent.Click();
+        public void ClickCreatedLink() => CreatedLink.Click();
 
-        public void GoToLinksPage() => linksPage.Click();
+        public void ClickNoContentLink() => NoContentLink.Click();
+
+        public void GoToLinksPage() => LinksPagePath.Click();
     }
 }

@@ -9,11 +9,5 @@ namespace ReneiskiSelenium11.PageObjects
         private MyWebElement elementsByXPath = new MyWebElement(By.XPath("//*[@class=\"card-body\"]//*[contains(text(), 'Elements')]"));
 
         public void GoToElemntsPage() => elementsByXPath.Click();
-
-        public string TextResult(string value)
-        {
-            var elem = MyWebElement.FindElementByXPathId(value);
-            return elem.Text;
-        }
     }
 }

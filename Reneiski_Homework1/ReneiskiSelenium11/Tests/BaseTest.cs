@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using ReneiskiSelenium11.Common.Drivers;
-using ReneiskiSelenium11.Data;
 using ReneiskiSelenium11.PageObjects;
 
 namespace ReneiskiSelenium11.Tests
@@ -15,8 +14,8 @@ namespace ReneiskiSelenium11.Tests
         public void OneTimeSetup()
         {
             WebDriverFactory.InitializeDriver();
-            WebDriverFactory.Driver.Navigate().GoToUrl(TestSettings.PageUrl);
-            GenericPages.BasePage.GoToElemntsPage();
+            GenericPages.BasePage.GoToHomePage();
+            GenericPages.MainPage.GoToElemntsPage();
         }
 
         [OneTimeTearDown]

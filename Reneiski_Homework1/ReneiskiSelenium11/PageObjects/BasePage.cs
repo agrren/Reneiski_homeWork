@@ -1,13 +1,10 @@
-﻿using OpenQA.Selenium;
-using ReneiskiSelenium11.Common.Drivers;
-using ReneiskiSelenium11.Common.WebElements;
+﻿using ReneiskiSelenium11.Common.Drivers;
+using ReneiskiSelenium11.Data;
 
 namespace ReneiskiSelenium11.PageObjects
 {
     public class BasePage : WebDriverFactory
     {
-        private MyWebElement elementsByXPath = new MyWebElement(By.XPath("//*[@class=\"card-body\"]//*[contains(text(), 'Elements')]"));
-
-        public void GoToElemntsPage() => elementsByXPath.Click();
+        public void GoToHomePage() => WebDriverFactory.Driver.Navigate().GoToUrl(TestSettings.PageUrl);
     }
 }

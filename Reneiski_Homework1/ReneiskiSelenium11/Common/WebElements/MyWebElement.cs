@@ -68,10 +68,10 @@ namespace ReneiskiSelenium11.Common.WebElements
 
         public string GetValueOfClassAtrubute() => GetAttribute("class");
 
-        public static IWebElement FindElementByXPathId(string value)
+        public static IWebElement FindElementById(string value)
         {
-            string xPath = string.Format("//*[@id='{0}']", value);
-            var element = WebDriverFactory.Driver.GetWebDriverWait().Until(drv => drv.FindElement(By.XPath(xPath)));
+            string id = string.Format("{0}", value);
+            var element = WebDriverFactory.Driver.GetWebDriverWait().Until(drv => drv.FindElement(By.Id(id)));
 
             return element;
         }

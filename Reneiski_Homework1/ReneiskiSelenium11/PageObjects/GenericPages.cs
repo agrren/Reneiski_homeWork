@@ -1,4 +1,5 @@
 ﻿using ReneiskiSelenium11.PageObjects.Pages;
+using ReneiskiSelenium11.PageObjects.Popups;
 
 namespace ReneiskiSelenium11.PageObjects
 {
@@ -10,7 +11,8 @@ namespace ReneiskiSelenium11.PageObjects
         public static LinksPage LinksPage => GetPage<LinksPage>();
         public static RadioButtonPage RadioButtonPage => GetPage<RadioButtonPage>();
         public static WebTablePage WebTablePage => GetPage<WebTablePage>();
-        public static RegFormPage RegFormPage => GetPage<RegFormPage>();
+        public static RegistrationFormPage RegistrationFormPage => GetPage<RegistrationFormPage>();
+        public static MainPage MainPage => GetPage<MainPage>();
 
         private static T GetPage<T>() where T : new() => new T();
     }

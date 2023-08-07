@@ -6,10 +6,10 @@ namespace ReneiskiSelenium11.PageObjects.Pages
 {
     public class ButtonPage : MainPage
     {
-        private MyWebElement DynamicClickButton = new MyWebElement(By.XPath("//*[(text()='Click Me')]"));
-        private MyWebElement DoubleClickTextElement = new MyWebElement(By.XPath("//*[@id='doubleClickMessage']"));
-        private MyWebElement RightClickTextElement = new MyWebElement(By.XPath("//*[@id='rightClickMessage']"));
-        private MyWebElement DynamicClickTextElement = new MyWebElement(By.XPath("//*[@id='dynamicClickMessage']"));
+        private MyWebElement DynamicClickButton => new MyWebElement(By.XPath("//*[(text()='Click Me')]"));
+        private MyWebElement DoubleClickTextElement => new MyWebElement(By.XPath("//*[@id='doubleClickMessage']"));
+        private MyWebElement RightClickTextElement => new MyWebElement(By.XPath("//*[@id='rightClickMessage']"));
+        private MyWebElement DynamicClickTextElement => new MyWebElement(By.XPath("//*[@id='dynamicClickMessage']"));
 
         public string ReturnDoubleClickTextResult() => DoubleClickTextElement.Text;
 

@@ -5,10 +5,10 @@ namespace ReneiskiSelenium11.PageObjects.Pages
 {
     public class LinksPage : BasePage
     {
-        private MyWebElement HomeLink = new MyWebElement(By.XPath("//*[@id='simpleLink']"));
-        private MyWebElement CreatedLink = new MyWebElement(By.XPath("//*[@id='created']"));
-        private MyWebElement NoContentLink = new MyWebElement(By.XPath("//*[@id='no-content']"));
-        private MyWebElement CreatedLinkTextElement = new MyWebElement(By.XPath("//*[@id='linkResponse']"));
+        private MyWebElement HomeLink => new MyWebElement(By.XPath("//*[@id='simpleLink']"));
+        private MyWebElement CreatedLink => new MyWebElement(By.XPath("//*[@id='created']"));
+        private MyWebElement NoContentLink => new MyWebElement(By.XPath("//*[@id='no-content']"));
+        private MyWebElement CreatedLinkTextElement => new MyWebElement(By.XPath("//*[@id='linkResponse']"));
 
         public string GetCurrentPageUrl() => Driver.Url;
 

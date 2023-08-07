@@ -15,7 +15,7 @@ namespace ReneiskiSelenium11.Tests
         {
             WebDriverFactory.InitializeDriver();
             GenericPages.BasePage.GoToHomePage();
-            GenericPages.MainPage.GoToElemntsPage();
+            GenericPages.MainPage.GoToElementsPage();
         }
 
         [OneTimeTearDown]

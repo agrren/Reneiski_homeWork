@@ -5,12 +5,12 @@ namespace ReneiskiSelenium11.PageObjects.Popups
 {
     public class RegistrationFormPage
     {
-        private MyWebElement FirstNameTextBox = new MyWebElement(By.XPath("//*[@id='firstName']"));
-        private MyWebElement LastNameTextBox = new MyWebElement(By.XPath("//*[@id='lastName']"));
-        private MyWebElement UserEmailTextBox = new MyWebElement(By.XPath("//*[@id='userEmail']"));
-        private MyWebElement AgeTextBox = new MyWebElement(By.XPath("//*[@id='age']"));
-        private MyWebElement SalaryTextBox = new MyWebElement(By.XPath("//*[@id='salary']"));
-        private MyWebElement DepartmentTextBox = new MyWebElement(By.XPath("//*[@id='department']"));
+        private MyWebElement FirstNameTextBox => new MyWebElement(By.XPath("//*[@id='firstName']"));
+        private MyWebElement LastNameTextBox => new MyWebElement(By.XPath("//*[@id='lastName']"));
+        private MyWebElement UserEmailTextBox => new MyWebElement(By.XPath("//*[@id='userEmail']"));
+        private MyWebElement AgeTextBox => new MyWebElement(By.XPath("//*[@id='age']"));
+        private MyWebElement SalaryTextBox => new MyWebElement(By.XPath("//*[@id='salary']"));
+        private MyWebElement DepartmentTextBox => new MyWebElement(By.XPath("//*[@id='department']"));
 
         public void EnterFirstName(string value) => FirstNameTextBox.SendKeys(value);
 

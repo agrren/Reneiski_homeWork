@@ -68,12 +68,7 @@ namespace ReneiskiSelenium11.Common.WebElements
 
         public string GetValueOfClassAtrubute() => GetAttribute("class");
 
-        public static IWebElement FindElementById(string value)
-        {
-            string id = string.Format("{0}", value);
-            var element = WebDriverFactory.Driver.GetWebDriverWait().Until(drv => drv.FindElement(By.Id(id)));
-
-            return element;
-        }
+        public static IWebElement FindElementById(string value) => WebDriverFactory.Driver.GetWebDriverWait().
+            Until(drv => drv.FindElement(By.Id(string.Format("{0}", value))));
     }
 }

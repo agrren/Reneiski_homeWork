@@ -18,8 +18,8 @@ namespace ReneiskiSelenium11.Tests
             GenericPages.MainPage.LeftMenuNavigationPanel.GoToCheckBoxPage();
             GenericPages.CheckBoxPage.ClickHomeCheckBox();
             Assert.IsTrue(GenericPages.CheckBoxPage.IsHomeCheckBoxChecked());
-            Assert.AreEqual(ConvertText.ConvertAnyText(CheckBoxPageConstants.SelectedHomeCheckboxExpectedMessage),
-                ConvertText.ConvertAnyText(GenericPages.CheckBoxPage.GetTextResultAfterHomeChecked()));
+            Assert.AreEqual(CheckBoxPageConstants.SelectedHomeCheckboxExpectedMessage,
+                StringExtension.ProcessStringBackspaces(GenericPages.CheckBoxPage.GetTextResultAfterHomeChecked()));
         }
 
         [Test]

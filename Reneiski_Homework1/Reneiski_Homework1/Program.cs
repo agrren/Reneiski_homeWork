@@ -1,4 +1,4 @@
-﻿using Reneiski_Homework1.Lecture9;
+using Reneiski_Homework1.Lecture10;
 
 namespace Reneiski_Homework1
 {
@@ -6,7 +6,14 @@ namespace Reneiski_Homework1
     {
         static void Main()
         {
-            Lecture9Task.Task3();
+            var example = ManWoman<Man>(3);
+            example.ToString();
+        }
+
+        static Generic<T> ManWoman<T>(int number) where T : Human
+        {
+            var ex = new Generic<T>(number);
+            return ex;
         }
     }
 }
